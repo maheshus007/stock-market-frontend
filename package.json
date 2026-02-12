@@ -1,0 +1,33 @@
+{
+  "name": "market-intel-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "5.59.16",
+    "axios": "1.7.3",
+    "classnames": "2.5.1",
+    "lucide-react": "0.471.0",
+    "next": "14.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-markdown": "9.0.1",
+    "recharts": "2.10.3",
+    "remark-gfm": "4.0.0",
+    "tailwindcss": "3.4.5"
+  },
+  "devDependencies": {
+    "@mermaid-js/mermaid-cli": "^11.12.0",
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.23",
+    "autoprefixer": "10.4.20",
+    "postcss": "8.4.44",
+    "typescript": "5.6.2"
+  }
+}

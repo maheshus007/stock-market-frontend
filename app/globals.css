@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0b1220;
+  --foreground: #e5e7eb;
+}
+
+body {
+  @apply bg-gray-950 text-gray-100;
+}
+
+.card {
+  @apply rounded-xl bg-gray-900/80 shadow-card border border-gray-800;
+}
+
+.card-title {
+  @apply text-sm font-semibold text-gray-300;
+}
+
+.tile-warning {
+  @apply sticky top-0 z-50 w-full bg-red-600 text-white py-2 px-4 shadow;
+}
