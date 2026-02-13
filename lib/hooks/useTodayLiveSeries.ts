@@ -45,17 +45,27 @@ export function computeTodayWindow(): TodayWindow {
 }
 
 export function useTodayWindow(enabled: boolean) {
-  const [window, setWindow] = useState<TodayWindow | null>(null);
+  const [todayWindow, setTodayWindow] = useState<TodayWindow | null>(null);
 
   useEffect(() => {
     if (!enabled) {
-      setWindow(null);
+      setTodayWindow(null);
       return;
     }
-    setWindow(computeTodayWindow());
+
+    // Compute immediately, then keep updating the end timestamp.
+    // Without this, the dashboard can get "stuck" showing only the data available
+    // at the moment live mode was enabled (e.g., 09:15–10:00).
+    setTodayWindow(computeTodayWindow());
+    const id: ReturnType<typeof setInterval> = globalThis.setInterval(() => {
+      setTodayWindow(computeTodayWindow());
+    }, 30_000);
+    return () => {
+      globalThis.clearInterval(id);
+    };
   }, [enabled]);
 
-  return window;
+  return todayWindow;
 }
 
 export function useTodayLiveSeries(
