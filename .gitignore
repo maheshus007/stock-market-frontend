@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+*.log
+
+# TypeScript incremental build
+tsconfig.tsbuildinfo
+
+# OS
+.DS_Store
+Thumbs.db
